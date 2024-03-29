@@ -1,0 +1,54 @@
+.main_banner {
+  width: 100%;
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.banner-actions {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  
+  position: relative;
+  top: -75px;
+  padding: 0px 30px 0px 20px;
+
+  > button {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border: 1px #FFFFFF solid;
+
+    font: 400 0.875rem $font, sans-serif;
+  }
+}
+
+.dots {
+  display: flex;
+  padding: 0;
+  justify-content: right;
+  gap: 4px;
+  width: auto;
+
+}
+
+.dot {
+  border: none;
+  width: 6px;
+  height: 6px;
+  background: #8A8A8A;
+  border-radius: 50%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.dot:focus {
+  outline: none;
+}
+
+.active {
+  background: #fffFFF;
+}

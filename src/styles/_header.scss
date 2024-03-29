@@ -1,0 +1,50 @@
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 20px 16px;
+  height: 55px;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+  z-index: 1000;
+  color: $gray_0;
+  transition: .1s ease-in-out;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  img {
+    width: 102px;
+  }
+}
+
+.scrolled {
+  background-color: $gray_50;
+  color: $gray_600;
+}
+
+.header_icon {
+  img {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.header_icon_cart {
+  @extend .header_icon;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  span {
+    font-size: 0.625rem;
+  }
+}

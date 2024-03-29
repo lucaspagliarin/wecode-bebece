@@ -1,0 +1,38 @@
+.categories {
+  padding: 32px 0px 48px 16px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  flex-direction: column;
+
+  h2 {
+    font: 400 1rem $font;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+
+  img {
+    min-width: 135px;
+    width: 20vh;
+    height: auto;
+
+    border-radius: 4px;
+  }
+
+  span {
+    font: 300 0.875rem $font;
+  }
+}

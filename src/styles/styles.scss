@@ -1,0 +1,28 @@
+$font: 'Open Sans';
+$font-footer: 'Raleway';
+
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@import './colors';
+@import './header';
+@import './banner';
+@import './navbanner';
+@import './category';
+@import './footer';
+
+
+* {
+  font-family: $font;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, input, textarea, button {
+  font: 400 1rem $font, sans-serif;
+}

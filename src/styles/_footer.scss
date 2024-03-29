@@ -1,0 +1,45 @@
+
+.footer {
+  background-color: $bebece_red;
+
+  padding: 24px 20px 64px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.footer > img {
+  width: calc(100% + 40px);
+}
+
+.footer-icons {
+  @include flexCenter();
+  flex-direction: row;
+  gap: 16px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.footer-links {
+  @include flexCenter();
+  flex-direction: column;
+  gap: 16px;
+
+  div {
+    @extend .footer-links;
+    gap: 10px;
+  }
+
+  h2 {
+    color: $gray_0;
+    font: 600 1rem $font-footer, sans-serif;
+  }
+  a {
+    color: $gray_0;
+    font: 400 0.875rem $font-footer, sans-serif;
+  }
+}

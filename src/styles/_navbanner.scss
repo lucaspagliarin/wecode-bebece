@@ -1,0 +1,9 @@
+.navbanner {
+  @include flexCenter();
+  flex-direction: column;
+  gap: 6px;
+
+  img {
+    width: 100%;
+  }
+}
