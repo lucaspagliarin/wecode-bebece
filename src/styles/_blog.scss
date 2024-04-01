@@ -1,5 +1,6 @@
 .blog {
   padding: 32px 16px;
+  background: $gray_50;
 
   h2 {
     font: 400 1rem $font
@@ -19,6 +20,11 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 16px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 
   h1 {
     font: 400 1rem $font;

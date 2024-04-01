@@ -10,8 +10,8 @@ import BannerSandalias from '../../assets/categories/banner-sandalias.png';
 export function Categories() {
   const [ref] = useKeenSlider({
     slides: {
-      perView: 2.5,
-      spacing: 0,
+      perView: 2.2,
+      spacing: 10,
     }
   })
   
