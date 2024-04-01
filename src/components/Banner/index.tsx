@@ -3,9 +3,9 @@ import { useKeenSlider } from 'keen-slider/react';
 import "keen-slider/keen-slider.min.css"
 
 
-import Banner1 from '../../assets/banner-principal-1.png';
-import Banner2 from '../../assets/banner-principal-2.png';
-import Banner3 from '../../assets/banner-principal-3.png';
+import Banner1 from '../../assets/banners/banner-principal-1.png';
+import Banner2 from '../../assets/banners/banner-principal-2.png';
+import Banner3 from '../../assets/banners/banner-principal-3.png';
 
 export function Banner() {
   const [currentSlide, setCurrentSlide] = useState(0);

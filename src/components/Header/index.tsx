@@ -15,7 +15,11 @@ import BagIconBlack from '../../assets/icons/icone-shopping-bag-black.png';
 
 import { useState } from 'react';
 
-export function Header() {
+interface HeaderProps {
+  bagItems: number;
+}
+
+export function Header({bagItems}: HeaderProps) {
   
   const [scrolled, setScrolled] = useState(false);
   
@@ -48,7 +52,7 @@ export function Header() {
         </span>
         <span className='header_icon_cart'>
           <img src={scrolled ? BagIconBlack : BagIcon} />
-          <span>0</span>
+          <span>{bagItems}</span>
         </span>
       </div>
     </header>

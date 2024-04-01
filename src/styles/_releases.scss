@@ -1,0 +1,85 @@
+.releases {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 32px 16px 48px 16px;
+
+  h2 {
+    font: 400 1rem $font
+  }
+}
+
+.release-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background: $gray-50;
+  
+  width: 220px;
+  height: 220px;
+
+  padding: 8px 8px;
+}
+
+.release-card-actions {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  height: 0;
+  width: 100%;
+
+  button {
+    border: 0;
+    height: 24px;
+    width: 24px;
+
+  }
+
+  span {
+    color: $bebece-red;
+    font-size: 0.75rem;
+  }
+}
+
+.release-card-actions-top {
+  @extend .release-card-actions;
+
+  position: relative;
+  top: 8px;
+}
+
+.release-card-actions-bottom {
+  @extend .release-card-actions;
+
+  position: relative;
+  top: -8px;
+
+  align-items: flex-end;
+}
+
+.release-card-infos {
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+  p {
+    font: 300 0.75rem $font;
+  }
+
+  span {
+    font: 400 0.875rem $font;
+  }
+}
+
+.dashed {
+  color: $gray-400;
+  text-decoration: line-through;
+}

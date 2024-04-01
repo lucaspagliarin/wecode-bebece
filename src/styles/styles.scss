@@ -13,6 +13,8 @@ $font-footer: 'Raleway';
 @import './banner';
 @import './navbanner';
 @import './category';
+@import './releases';
+@import './blog';
 @import './footer';
 
 
@@ -25,4 +27,15 @@ $font-footer: 'Raleway';
 
 body, input, textarea, button {
   font: 400 1rem $font, sans-serif;
+}
+
+.toast-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  font: 300 0.75rem $font;
+  
+  width: 174px;
+  padding: 12px 24px 12px 24px;
 }

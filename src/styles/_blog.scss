@@ -1,0 +1,46 @@
+.blog {
+  padding: 32px 16px;
+
+  h2 {
+    font: 400 1rem $font
+  }
+
+  p {
+    margin-top: 4px;
+    font: 300 0.75rem $font;
+    font-style: italic; 
+    color: $gray-400;
+  }
+}
+
+.blog-post {
+  margin-top: 24px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+
+  h1 {
+    font: 400 1rem $font;
+  }
+
+  p {
+    margin-top: 4px;
+    font: 300 0.75rem $font;
+    font-style: normal; 
+    color: $gray-400;
+  }
+
+  a {
+    font: 300 0.75rem $font-footer;
+    color: $gray_600;
+    text-decoration: none;
+  }
+}
+
+.blog-actions {
+  display: flex;
+  width: 100%;
+  align-items: end;
+  justify-content: flex-end;
+}
