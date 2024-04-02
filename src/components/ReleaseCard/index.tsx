@@ -8,17 +8,19 @@ import { toast } from 'react-toastify';
 
 interface ReleaseCardProps {
   release: {
+    name: string;
     image: string;
-    description: string;
-    price: number;
-    discount: number;
-    newPrice: number;
+    price: {
+      amount: number;
+      isDiscount?: number | null;
+    }
+    id: number;
   }
   handleAddBagItems: () => void;
 }
 
 export function ReleaseCard({ release, handleAddBagItems }: ReleaseCardProps) {
-  const { image, description, price, discount, newPrice } = release;
+  const { image, name, price} = release;
 
   const [liked, setLiked] = useState(false);
 
@@ -54,18 +56,18 @@ export function ReleaseCard({ release, handleAddBagItems }: ReleaseCardProps) {
           <button onClick={handleAddItem}>
             <img src={ShoppingBag} />
           </button>
-          <span>{discount > 0 ? discount + '% OFF' : ''}</span>
+          <span>{price.isDiscount ? '10% OFF' : ''}</span>
         </div>
       </div>
       <div className='release-card-infos'>
-        <p>{ description }</p>
-        {discount > 0 ? 
+        <p>{ name }</p>
+        {price.isDiscount ? 
           <div>
-            <span className='dashed'>{formatPrice(price)}</span> 
-            <span>  {formatPrice(newPrice)}</span>
+            <span className='dashed'>{formatPrice(price.amount)}</span> 
+            <span>  {formatPrice(price.isDiscount)}</span>
           </div>
           : 
-          <span>{formatPrice(price)}</span>
+          <span>{formatPrice(price.amount)}</span>
         }
       </div>
 

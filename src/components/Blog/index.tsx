@@ -1,7 +1,6 @@
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 
-
 import Post1 from '../../assets/blog/image1.png'
 import Post2 from '../../assets/blog/image2.png'
 import Post3 from '../../assets/blog/image3.png'
@@ -29,7 +28,6 @@ const postList = [
     link: "#",
   },
 ]
-
 
 export function Blog() {
   const [currentSlide, setCurrentSlide] = useState(0);

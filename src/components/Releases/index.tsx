@@ -3,39 +3,35 @@ import 'keen-slider/keen-slider.min.css'
 
 import { ReleaseCard } from "../ReleaseCard";
 
-import Release1 from '../../assets/releases/sapato-vermelho.png'
-import Release2 from '../../assets/releases/bota-preta.png'
-import Release3 from '../../assets/releases/sapato-branco.png'
-
-const releasesList = [
-  {
-    image: Release1,
-    description: 'Scarpin Sligback Bebecê Salto Médio Taça Detalhe Metalizado',
-    price: 179.9,
-    discount: 0,
-    newPrice: 0,
-  },
-  {
-    image: Release2,
-    description: 'Coturno Feminino Bebecê Tratorado Detalhe Tachas',
-    price: 349.90,
-    discount: 10,
-    newPrice: 315.00,
-  },
-  {
-    image: Release3,
-    description: 'Scarpin Bebecê Salto Alto Taço com Fivela',
-    price: 159.9,
-    discount: 0,
-    newPrice: 0,
-  }
-]
+import { useEffect, useState } from 'react';
+import { getProducts } from '../../utils/getProducts';
 
 interface ReleaseProps {
   handleAddBagItems: () => void;
 }
 
+export interface ReleaseListProps {
+  name: string;
+  image: string;
+  price: {
+    amount: number;
+    isDiscount?: number | null;
+  }
+  id: number;
+}
+
 export function Releases({handleAddBagItems}: ReleaseProps) {
+  const [releasesList, setReleasesList] = useState<ReleaseListProps[]>([])
+  
+  async function getReleases() {
+    const products = await getProducts();
+    setReleasesList(products)
+  }
+
+  useEffect(() => {
+    getReleases()
+  }, [])
+
   const [ref] = useKeenSlider({
     slides: {
       perView: 1.5,
@@ -46,16 +42,18 @@ export function Releases({handleAddBagItems}: ReleaseProps) {
   return (
     <div className='releases'>
       <h2>Lançamentos</h2>
+      {releasesList.length > 0 && (
       <div ref={ref} className='keen-slider'>
-        {releasesList.map((release, id) => {
+        {releasesList.map((release) => {
           return (
-            <div className='keen-slider__slide' key={id}>
+            <div className='keen-slider__slide' key={release.id}>
               <ReleaseCard handleAddBagItems={handleAddBagItems} release={release} />
             </div>
           )
         })}
         
       </div>
+      )}
     </div>
   )
 }
