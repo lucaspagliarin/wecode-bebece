@@ -38,6 +38,11 @@
   }
 }
 
+button.header_icon {
+  border: 0;
+  background: transparent;
+}
+
 .header_icon_cart {
   @extend .header_icon;
   display: flex;

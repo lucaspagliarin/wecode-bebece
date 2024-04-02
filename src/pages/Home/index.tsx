@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { Blog } from '../../components/Blog';
+import { NavMenu } from '../../components/NavMenu';
 
 
 export function Home() {
@@ -21,9 +22,20 @@ export function Home() {
     setBagItems(bagItems+1);
   }
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  function handleOpenMenu() {
+    setIsMenuOpen(true);
+  }
+
+  function handleCloseMenu() {
+    setIsMenuOpen(false);
+  }
+
   return(
     <div>
-      <Header bagItems={bagItems}/>
+      <Header bagItems={bagItems} handleOpenMenu={handleOpenMenu}/>
+      <NavMenu isOpen={isMenuOpen} handleCloseMenu={handleCloseMenu}/>
       <Banner />
       <Categories />
       <NavBanner />

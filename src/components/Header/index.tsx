@@ -17,9 +17,10 @@ import { useState } from 'react';
 
 interface HeaderProps {
   bagItems: number;
+  handleOpenMenu: () => void;
 }
 
-export function Header({bagItems}: HeaderProps) {
+export function Header({bagItems, handleOpenMenu}: HeaderProps) {
   
   const [scrolled, setScrolled] = useState(false);
   
@@ -36,9 +37,9 @@ export function Header({bagItems}: HeaderProps) {
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div>
-        <span className='header_icon'>
+        <button onClick={handleOpenMenu} className='header_icon'>
           <img src={scrolled ? MenuIconBlack : MenuIcon} />
-        </span>
+        </button>
         <span className='header_icon'>
           <img src={scrolled ? SearchIconBlack : SearchIcon} />
         </span>
